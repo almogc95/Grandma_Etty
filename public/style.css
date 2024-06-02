@@ -58,3 +58,10 @@ footer pre {
     font-size: 18px;
     font-family: 'Rubik Dirt';
 } */
+#odot {
+    text-align: center;
+    font-size: 1.2em; 
+    text-align: right;
+    margin: 0 auto;
+    max-width: 1001px;
+}
