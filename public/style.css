@@ -44,6 +44,9 @@ footer {
     bottom: 0;
 
 }
+.centered {
+    text-align: center;
+}
 /* 
 footer a {
     float: center;
