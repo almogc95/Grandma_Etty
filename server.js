@@ -33,3 +33,6 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 
+
+
+console.log("israel");
