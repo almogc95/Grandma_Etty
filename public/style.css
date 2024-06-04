@@ -1,16 +1,15 @@
-body {
+.body {
     font-family: Arial, sans-serif;
     background-color: #143255;
     color: white;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
 }
 
 nav {
     background-color: rgb(40, 40, 43);
-    padding: 10px;
-    text-align: center;
+    padding: 20px;
+    text-align: leftenter;
 }
 
 nav a {
@@ -38,17 +37,7 @@ footer {
 .centered {
     text-align: center;
 }
-/* 
-footer a {
-    float: center;
-    color: black;
-    padding-left: 10px;
-}
 
-footer pre {
-    font-size: 18px;
-    font-family: 'Rubik Dirt';
-} */
 #odot {
     text-align: center;
     font-size: 1.2em; 
@@ -56,3 +45,12 @@ footer pre {
     margin: 0 auto;
     max-width: 1001px;
 }
+input[type=text], select {
+    width:50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
