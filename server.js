@@ -32,7 +32,3 @@ app.get('/donate', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about');
 });
-
-
-
-console.log("israel");
