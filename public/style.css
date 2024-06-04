@@ -1,22 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #143255;
+    color: white;
     margin: 0;
     padding: 0;
     line-height: 1.6;
 }
 
-header {
-    background-color: #007bff;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
 nav {
-    background-color: #333;
-    color: #fff;
+    background-color: rgb(40, 40, 43);
     padding: 10px;
     text-align: center;
 }
@@ -37,12 +29,11 @@ section {
 }
 
 footer {
-    background-color: black;
+    background-color: rgb(40, 40, 43);
     color: gray;
     text-align: center;
-    padding-bottom: 5px;
+    padding-bottom: 0;
     bottom: 0;
-
 }
 .centered {
     text-align: center;
