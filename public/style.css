@@ -1,10 +1,14 @@
-body {
+.body {
     font-family: Arial, sans-serif;
+<<<<<<< HEAD
     background-color: #f5f5f5;
     color: #333;
+=======
+    background-color: wheat;
+    color: rgb(40, 40, 43);
+>>>>>>> b06fe031796d4a996d06b1df26f9f743f9025be1
     margin: 0;
     padding: 0;
-    line-height: 1.6;
 }
 
 header {
@@ -15,25 +19,96 @@ header {
 }
 
 nav {
+<<<<<<< HEAD
     background-color: #333;
     color: #fff;
     padding: 10px;
+=======
+    background-color: rgb(40, 40, 43);
+    color: wheat;
+}
+
+nav ul{
+    display: flex;
+    align-items : center;
+    justify-content: space-between;
+>>>>>>> b06fe031796d4a996d06b1df26f9f743f9025be1
     text-align: center;
+    padding: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    list-style: none;
 }
 
 nav a {
-    color: #fff;
+    color: wheat;
     text-decoration: none;
-    margin: 0 10px;
 }
 
-section {
-    padding: 20px;
-    margin: 20px auto;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
+.navbarButton{
+    position: relative;
+    display: inline-block;
+    transition: color 0.4s ease;
+}
+
+.navbarButton::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: whitesmoke;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease;
+}
+
+.navbarButton:hover{
+    color: #ff4081;
+}
+
+.navbarButton:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#navGrooptLeft{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    margin-left: 30px;
+}
+
+#navButtonsLeft{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-left: 30px;
+}
+
+#navButtonsLeft li{
+    padding-right: 65px;
+}
+
+#navGroopRight{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    margin-right: 30px;
+}
+
+#navButtonsRight{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-right: 35px;
+}
+
+#navButtonsRight li{
+    padding-left: 65px;
 }
 
 /* footer {
@@ -47,24 +122,19 @@ section {
 .centered {
     text-align: center;
 }
-/* 
-footer a {
-    float: center;
-    color: black;
-    padding-left: 10px;
-}
 
 footer pre {
     font-size: 18px;
     font-family: 'Rubik Dirt';
-} */
-#odot {
-    text-align: center;
+} 
+
+    #odot {
     font-size: 1.2em; 
-    text-align: right;
+    text-align: left;
     margin: 0 auto;
     max-width: 1001px;
 }
+<<<<<<< HEAD
 footer{
     position: absolute;
     bottom: 0;
@@ -176,4 +246,14 @@ display: block;
   margin-top: 10px;
   margin-bottom: 20px;
 }
+=======
+input[type=text], select {
+    width:50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+>>>>>>> b06fe031796d4a996d06b1df26f9f743f9025be1
 }
