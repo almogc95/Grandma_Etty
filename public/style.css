@@ -6,6 +6,7 @@
     padding: 0;
 }
 
+
 nav {
     background-color: rgb(40, 40, 43);
     color: wheat;
@@ -103,7 +104,7 @@ footer pre {
     font-family: 'Rubik Dirt';
 } 
 
-    #odot {
+ #odot {
     font-size: 1.2em; 
     text-align: left;
     margin: 0 auto;
@@ -117,7 +118,6 @@ footer{
     background: #111;
     height: auto;
     width: 100vw;
-
     padding-top: 40px;
     color: #fff;
 }
@@ -220,4 +220,7 @@ display: block;
   margin-top: 10px;
   margin-bottom: 20px;
 }
+}
+footer{
+        bottom: -673px;
 }
