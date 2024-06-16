@@ -1,285 +1,293 @@
 .body {
-  font-family: Arial, sans-serif;
-  background-color: wheat;
-  color: rgb(40, 40, 43);
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #143255;
+    color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    outline-style:  #000000;
+
 }
 
 
 nav {
-  background-color: rgb(40, 40, 43);
-  color: wheat;
-}
+    background-color: #ffc4d0;
+    padding: 10px;
+    text-align: center;
+    font-size: 27px;
+    border-radius: 25px;
 
-nav ul{
-  display: flex;
-  align-items : center;
-  justify-content: space-between;
-  text-align: center;
-  padding: 0;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  list-style: none;
 }
 
 nav a {
-  color: wheat;
-  text-decoration: none;
+    color: #000000;
+    background-color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    border-radius: 20px;
 }
+#rcorners1 {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+  }
 
 .navbarButton{
-  position: relative;
-  display: inline-block;
-  transition: color 0.4s ease;
+    position: relative;
+    display: inline-block;
+    transition: color 0.4s ease;
 }
 
-.navbarButton::after{
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: whitesmoke;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.4s ease;
+footer {
+    background-color: #ffc4d0;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-bottom: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: whitesmoke;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease;
 }
 
 .navbarButton:hover{
-  color: #ff4081;
+    color: #ff4081;
 }
 
 .navbarButton:hover::after{
-  transform: scaleX(1);
-  transform-origin: bottom left;
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 #navGrooptLeft{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0;
-  margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    margin-left: 30px;
 }
 
 #navButtonsLeft{
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin-left: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-left: 30px;
 }
 
 #navButtonsLeft li{
-  padding-right: 65px;
+    padding-right: 65px;
 }
 
 #navGroopRight{
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0;
-  margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    margin-right: 30px;
 }
 
 #navButtonsRight{
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin-right: 35px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-right: 35px;
 }
 
 #navButtonsRight li{
-  padding-left: 65px;
+    padding-left: 65px;
 }
 
 
 .centered {
-  text-align: center;
+    text-align: center;
 }
 
 footer pre {
-  font-size: 18px;
-  font-family: 'Rubik Dirt';
+    font-size: 18px;
+    font-family: 'Rubik Dirt';
 } 
 
-#odot {
-  font-size: 1.2em; 
-  text-align: left;
-  margin: 0 auto;
-  max-width: 1001px;
+ #odot {
+    font-size: 1.2em; 
+    text-align: left;
+    margin: 0 auto;
+    max-width: 1001px;
 }
 footer{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #111;
-  height: auto;
-  width: 100vw;
-  padding-top: 40px;
-  color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width: 100vw;
+    padding-top: 40px;
+    color: #fff;
 }
 .footer-content{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
 }
 .footer-content h3{
-  font-size: 2.1rem;
-  font-weight: 500;
-  text-transform: capitalize;
-  line-height: 3rem;
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
 }
 .footer-content p{
-  max-width: 500px;
-  margin: 10px auto;
-  line-height: 28px;
-  font-size: 14px;
-  color: #cacdd2;
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    color: #cacdd2;
 }
 .socials{
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1rem 0 3rem 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
 }
 .socials li{
-  margin: 0 10px;
+    margin: 0 10px;
 }
 .socials a{
-  text-decoration: none;
-  color: #fff;
-  border: 1.1px solid white;
-  padding: 5px;
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px solid white;
+    padding: 5px;
 
-  border-radius: 50%;
+    border-radius: 50%;
 
 }
 .socials a i{
-  font-size: 1.1rem;
-  width: 20px;
+    font-size: 1.1rem;
+    width: 20px;
 
 
-  transition: color .4s ease;
+    transition: color .4s ease;
 
 }
 .socials a:hover i{
-  color: aqua;
+    color: aqua;
 }
 
 .footer-bottom{
-  background: #000;
-  width: 100vw;
-  padding: 20px;
+    background: #000;
+    width: 100vw;
+    padding: 20px;
 padding-bottom: 40px;
-  text-align: center;
+    text-align: center;
 }
 .footer-bottom p{
 float: left;
-  font-size: 14px;
-  word-spacing: 2px;
-  text-transform: capitalize;
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
 }
 .footer-bottom p a{
-color:#44bae8;
-font-size: 16px;
-text-decoration: none;
+  color:#44bae8;
+  font-size: 16px;
+  text-decoration: none;
 }
 .footer-bottom span{
-  text-transform: uppercase;
-  opacity: .4;
-  font-weight: 200;
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
 }
 .footer-menu{
-float: right;
+  float: right;
 
 }
 .footer-menu ul{
-display: flex;
+  display: flex;
 }
 .footer-menu ul li{
 padding-right: 10px;
 display: block;
 }
 .footer-menu ul li a{
-color: #cfd2d6;
-text-decoration: none;
+  color: #cfd2d6;
+  text-decoration: none;
 }
 .footer-menu ul li a:hover{
-color: #27bcda;
+  color: #27bcda;
 }
 
 @media (max-width:500px) {
 .footer-menu ul{
-display: flex;
-margin-top: 10px;
-margin-bottom: 20px;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 }
 footer{
-      bottom: -673px;
+        bottom: -673px;
 }
 
 
 
 
 button {
-font-family: inherit;
-font-size: 20px;
-background: royalblue;
-color: white;
-padding: 0.7em 1em;
-padding-left: 0.9em;
-display: flex;
-align-items: center;
-border: none;
-border-radius: 16px;
-overflow: hidden;
-transition: all 0.2s;
-cursor: pointer;
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
 }
 
 button span {
-display: block;
-margin-left: 0.3em;
-transition: all 0.3s ease-in-out;
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
 }
 
 button svg {
-display: block;
-transform-origin: center center;
-transition: transform 0.3s ease-in-out;
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
 }
 
 button:hover .svg-wrapper {
-animation: fly-1 0.6s ease-in-out infinite alternate;
+  animation: fly-1 0.6s ease-in-out infinite alternate;
 }
 
 button:hover svg {
-transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
 }
 
 button:hover span {
-transform: translateX(5em);
+  transform: translateX(5em);
 }
 
 button:active {
-transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 @keyframes fly-1 {
-from {
-  transform: translateY(0.1em);
-}
+  from {
+    transform: translateY(0.1em);
+  }
 
-to {
-  transform: translateY(-0.1em);
-}
+  to {
+    transform: translateY(-0.1em);
+  }
 }
 
 
@@ -289,3 +297,53 @@ margin: 0 auto;
 max-width: 101px;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
