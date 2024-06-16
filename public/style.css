@@ -1,23 +1,37 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #143255;
-    color: white;
+    color: rgb(0, 0, 0);
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    outline-style:  #000000;
+
 }
 
 nav {
-    background-color: rgb(40, 40, 43);
+    background-color: #ffc4d0;
     padding: 10px;
     text-align: center;
+    font-size: 27px;
+    border-radius: 25px;
+
 }
 
 nav a {
-    color: #fff;
+    color: #000000;
+    background-color: #ffffff;
     text-decoration: none;
     margin: 0 10px;
+    border-radius: 20px;
 }
+#rcorners1 {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+  }
 
 section {
     padding: 20px;
@@ -29,8 +43,8 @@ section {
 }
 
 footer {
-    background-color: rgb(40, 40, 43);
-    color: gray;
+    background-color: #ffc4d0;
+    color: rgb(0, 0, 0);
     text-align: center;
     padding-bottom: 0;
     bottom: 0;
