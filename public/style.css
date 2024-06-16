@@ -1,32 +1,38 @@
 .body {
     font-family: Arial, sans-serif;
-    background-color: wheat;
-    color: rgb(40, 40, 43);
+    background-color: #143255;
+    color: rgb(0, 0, 0);
     margin: 0;
     padding: 0;
+    line-height: 1.6;
+    outline-style:  #000000;
+
 }
 
 
 nav {
-    background-color: rgb(40, 40, 43);
-    color: wheat;
-}
-
-nav ul{
-    display: flex;
-    align-items : center;
-    justify-content: space-between;
+    background-color: #ffc4d0;
+    padding: 10px;
     text-align: center;
-    padding: 0;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    list-style: none;
+    font-size: 27px;
+    border-radius: 25px;
+
 }
 
 nav a {
-    color: wheat;
+    color: #000000;
+    background-color: #ffffff;
     text-decoration: none;
+    margin: 0 10px;
+    border-radius: 20px;
 }
+#rcorners1 {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+  }
 
 .navbarButton{
     position: relative;
@@ -34,9 +40,11 @@ nav a {
     transition: color 0.4s ease;
 }
 
-.navbarButton::after{
-    content: '';
-    position: absolute;
+footer {
+    background-color: #ffc4d0;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-bottom: 0;
     bottom: 0;
     left: 0;
     width: 100%;
