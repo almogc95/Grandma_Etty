@@ -24,64 +24,27 @@ const notes_schema = new mongoose.Schema({
         }
     },
 
-    // תאריך הפגישה
-    date: {
-        type: Date, 
-        required: [true, 'Date is required.'],
-        validate: {
-            validator: function (v) {
-                // לקיחת תאריך היומי ותאריך הפגישה
-                const todayDate = new Date(); // תאריך העכשוי 
-                todayDate.setHours(0,0,0,0); // מאפס את השעה לחצות בשביל ההשוואה
-                const userDate = new Date(v); // תאריך שהמשתמש הזין
-                userDate.setHours(0,0,0,0); // ...מאפס את השעה לחצות
-
-                return userDate>=todayDate;
-            },
-            message: 'Date cannot be from the past.'
-        }
-    },
-
     // שעת הפגישה
-    time: {
-        type: String,
+    Date_time: {
+        type: Date,
         required: [true, 'Time is required.'],
         validate:{
             validator: function (v){
-                const timeParts=v.split(':');
-
-                // בודק שהוזן רק שעות ודקות
-                if(timeParts.length!==2){
-                    return false;
-                }
-
-                const hours=+time[0];
-                const minutes=+time[1];
-
-                // בודק שהזמן שהוזן חוקי
-                if(isNaN(hours) || isNaN(minutes) || hours>23 || hours<0 || minutes<0 || minutes>59){
-                    return false;
-                }
-
-                const now = new Date();
-                const userTime = new Date();
-
-                // הזנה למשתנה את הזמן שהזין המשתמש
-                userTime.setHours(hours);
-                userTime.setMinutes(minutes);
-                userTime.setSeconds(0);
-                userTime.setMilliseconds(0);
-
-                // בדיקה שהזמן לא מהעבר
-                if(this.date){
-                    const todayDate = new Date(this.date);
-                    if (todayDate.toDateString === now.toDateString) {
-                        return userTime >= now;
-                    }
-                }
-                return true;
+            const now = new Date();
+            return v >= now;    
             },
             message: 'Time cannot be from the past.'
+        }
+    },
+
+    // סיום הפגישה
+    until: {
+        type: Date,
+        validate: {
+            validator: function (v){
+                const now = new Date();
+                return v >= now; 
+            }
         }
     },
 

@@ -17,25 +17,29 @@
             <h1>Bulletin Board</h1>
             <h2>Here you can upload a donation and help form. After uploading the form, you can receive a response from one of the other participants.</h2>
         </div>
+        <p>(Everything with a * sign must be filled)</p>
         <div id="giveAndTake_form">
             <form action="http://localhost:3000/giveAndTake" method="post">
+                <p>*</p>
                 <label for="give">What I give:</label>
-                <input type="text" id="give" name="give">
+                <input type="text" id="give" name="give" required>
                 <br>
+                <p>*</p>
                 <label for="take">What I take:</label>
-                <input type="text" id="take" name="take">
+                <input type="text" id="take" name="take" required>
                 <br>
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date">
+                <p>*</p>
+                <label for="Date_time">Date and time:</label>
+                <input type="datetime-local" id="Date_time" name="Date_time" required>
                 <br>
-                <label for="time">Time:</label>
-                <input type="time" id="time" name="time">
+                <label for="until">Until:</label>
+                <input type="datetime-local" id="until" name="until">
                 <br>
                 <label for="location">location:</label>
                 <input type="text" id="location" name="location">
                 <br>
                 <label for="notes">Notes:</label>
-                <input type="text" id="notes" name="notes">
+                <textarea type="text" id="notes" name="notes"></textarea>
                 <br>
                 <input type="submit" id="giveAndTake_formUpload" value="Upload">
             </form>
