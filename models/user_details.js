@@ -125,4 +125,19 @@ password: {
     }
 
 } 
+
+
+
+
+age: {
+    type:[ ''],
+    
+    validate: {
+        validator: function (v) {
+            return (v.length >=5 && v.trim() != '' && !/ /.test(v))
+        },
+    }
+
+},
+
 });
