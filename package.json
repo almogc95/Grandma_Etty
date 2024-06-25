@@ -1,7 +1,7 @@
 {
   "name": "final_project_b",
   "version": "1.0.0",
-  "description": "",
+  "description": "להתקין:\r npm: npm init --y\r express: npm i express\r path: npm i path\r nodmone: npm i nodemone \r ejs: npm i ejs",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
