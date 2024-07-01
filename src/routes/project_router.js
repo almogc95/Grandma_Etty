@@ -3,23 +3,29 @@ const router = express.Router();
 const UserModel = require('../models/user_details');
 
 router.get('/', (req, res) => {
-    res.render('homePage');
+    res.render(`homepage`);
 });
 
 router.post('/', async (req, res) => {
-    res.render('homePage');
+    console.log('h')
+    const { user_name, email, phone, password } = req.body;
     try {
-        const { name, email, phone, password} = req.body;
-        let user = new UserModel(req.body);
+        let user = new UserModel({ user_name, email, phone, password });
         await user.save();
-        res.render('giveAndTake');
+        res.send('ok');
+        // res.render('giveAndTake');
 
     } catch (error) {
-        
+        console.log(req.body)
+        res.status(500).json({ error: 'An error occurred while creating the user' })
     }
 });
 
 router.get('/giveAndTake', (req, res) => {
+    res.render('giveAndTake');
+});
+
+router.post('/giveAndTake', (req, res) => {
     res.render('giveAndTake');
 });
 
