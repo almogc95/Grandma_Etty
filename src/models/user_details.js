@@ -5,16 +5,16 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const user_schema = new Schema({
-    name: {
+    signUp_email: {
         type: String
     },
-    email: {
+    signUp_user_name: {
         type: String
     },
-    phone: {
-        type: String,
+    signUp_password: {
+        type: Number,
     },
-    password: {
+    signUp_bio: {
         type: String
     }
 });

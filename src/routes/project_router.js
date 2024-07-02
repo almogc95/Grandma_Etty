@@ -7,20 +7,19 @@ router.get('/', (req, res) => {
     res.render(`homepage`);
 });
 
-router.post('/', grandma_etty_Controller.addUser);
 
-// router.post('/', async (req, res) => {
-//     try {
-//         console.log(req.body)
-//         const New_user = new UserModel(req.body);
-//         await New_user.save();
-//         res.send('ok');
-//         // res.render('giveAndTake');
+router.get('/signUp', (req, res) => {
+    res.render('signup');
+});
 
-//     } catch (error) {
-//         res.status(500).json({ error: 'An error occurred while creating the user' })
-//     }
-// });
+router.post('/signUp', grandma_etty_Controller.addUser);
+
+
+router.get('/LogIn', (req, res) => {
+    res.render('LogIn');
+});
+router.post('/LogTn', grandma_etty_Controller.findUser);
+
 
 router.get('/giveAndTake', (req, res) => {
     res.render('giveAndTake');
@@ -41,5 +40,6 @@ router.get('/donate', (req, res) => {
 router.get('/profile', (req, res) => {
     res.render('profile');
 });
+
 
 module.exports = router;
