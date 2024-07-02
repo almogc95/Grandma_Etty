@@ -1,31 +1,28 @@
 const express = require('express');
 const router = express.Router();
-const UserModel = require('../models/user_details');
+// const UserModel = require('../models/user_details');
+const grandma_etty_Controller = require('../controllers/grandma_etty_Controller');
 
 router.get('/', (req, res) => {
     res.render(`homepage`);
 });
 
-router.post('/', async (req, res) => {
-    console.log('h')
-    const { user_name, email, phone, password } = req.body;
-    try {
-        let user = new UserModel({ user_name, email, phone, password });
-        await user.save();
-        res.send('ok');
-        // res.render('giveAndTake');
+router.post('/', grandma_etty_Controller.addUser);
 
-    } catch (error) {
-        console.log(req.body)
-        res.status(500).json({ error: 'An error occurred while creating the user' })
-    }
-});
+// router.post('/', async (req, res) => {
+//     try {
+//         console.log(req.body)
+//         const New_user = new UserModel(req.body);
+//         await New_user.save();
+//         res.send('ok');
+//         // res.render('giveAndTake');
+
+//     } catch (error) {
+//         res.status(500).json({ error: 'An error occurred while creating the user' })
+//     }
+// });
 
 router.get('/giveAndTake', (req, res) => {
-    res.render('giveAndTake');
-});
-
-router.post('/giveAndTake', (req, res) => {
     res.render('giveAndTake');
 });
 

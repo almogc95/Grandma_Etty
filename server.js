@@ -1,20 +1,22 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const path = require('path');
+const PORT = 3000;
+const projectRouter = require('./src/routes/project_router');
 
-mongoose.connect('mongodb+srv://grandma_etty:grandma_etty12345@almogc95.4gvzlpw.mongodb.net/');
+const dotenv = require('dotenv');
+dotenv.config({
+    path: '.env'
+});
+
+const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@grandmaetty.dpgfu0a.mongodb.net/grandma_etty_DB`
+
+mongoose.connect(MONGODB_URI);
 
 mongoose.connection.on('connected', () => {
     console.log('MongoDB connected');
 });
-
-user_details = mongoose.createConnection('mongodb://localhost:27017/grandma_etty_DB');
-give_and_take = mongoose.createConnection('mongodb://localhost:27017/give_and_take');
-const PORT = 3000;
-const projectRouter = require('./src/routes/project_router');
-
-const path = require('path');
-
 
 
 app.set('view engine', 'ejs');
