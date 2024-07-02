@@ -312,7 +312,8 @@ max-width: 101px;
 
 #user_name{
   /* margin:px; */
-  margin-right: 600px;
+  margin-right: 1000px;
+  
 }
 
 .button-88 {
@@ -351,6 +352,12 @@ max-width: 101px;
   padding: 20px;
   width: 200px;
   height: 150px;
+}
+#profile_label {
+  text-align: center; 
+  
+  
+
 }
 
 
