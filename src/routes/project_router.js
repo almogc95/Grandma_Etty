@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 
 
 router.get('/signUp', (req, res) => {
-    res.render('signup');
+    res.render('signUp');
 });
 
 router.post('/signUp', grandma_etty_Controller.addUser);
@@ -17,7 +17,9 @@ router.post('/signUp', grandma_etty_Controller.addUser);
 router.get('/LogIn', (req, res) => {
     res.render('LogIn');
 });
-router.post('/LogTn', grandma_etty_Controller.findUser);
+
+
+router.post('/LogIn', grandma_etty_Controller.findUser);
 
 
 router.get('/giveAndTake', (req, res) => {
@@ -36,9 +38,7 @@ router.get('/donate', (req, res) => {
     res.render('donate');
 });
 
-router.get('/profile', (req, res) => {
-    res.render('profile');
-});
 
+router.get('/profile', grandma_etty_Controller.showUser);
 
 module.exports = router;

@@ -4,6 +4,7 @@
     color: rgb(40, 40, 43);
     margin: 0;
     padding: 0;
+
 }
 
 nav {
@@ -98,10 +99,6 @@ nav a {
     text-align: center;
 }
 
-footer pre {
-    font-size: 18px;
-    font-family: 'Rubik Dirt';
-} 
 
  #odot {
     font-size: 1.2em; 
@@ -109,7 +106,14 @@ footer pre {
     margin: 0 auto;
     max-width: 1001px;
 }
+
+footer pre {
+    font-size: 18px;
+    font-family: 'Rubik Dirt';
+} 
+
 footer{
+ 
     position: absolute;
     bottom: 0;
     left: 0;
@@ -120,8 +124,8 @@ footer{
     padding-top: 40px;
     color: #fff;
 }
+
 .footer-content{
-    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
