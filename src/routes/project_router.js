@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-// const UserModel = require('../models/user_details');
 const grandma_etty_Controller = require('../controllers/grandma_etty_Controller');
 
 router.get('/', (req, res) => {

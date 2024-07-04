@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="../public/style.css" type="text/css">
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grandma Etty | Home page</title>
-    <script src="app.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="../public/style.css" type="text/css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grandma Etty | Home page</title>
+  <script src="app.js"></script>
 </head>
+
 <body>
-    <header>
-        <%- include('navbar') %>
-      </header>
-    <form method="post" action="http://localhost:3000/">
-        <label for="email">email:</label>
-        <input type="email" id="signUp_email" name="signUp_email">
-        <br><br>
-        <label for="name">name:</label>
-        <input type="text" id="signUp_name" name="signUp_name" required>     
-        <br><br>
-        <label for="password"> password:</label>
-        <input type="tel" id="signUp_password" name="signUp_password" required>
-        <br><br>
-        <label for="biography">biography:</label>
-        <textarea id="signUp_bio" name="signUp_bio"></textarea>
-        <br><br>
-        <input type="submit" role="button" class="button-88" id="signUp_submit" value="Upload">
-      </form>
+  <header>
+    <%- include('navbar') %>
+  </header>
+  <form method="post" action="http://localhost:3000/signUp">
+    <label for="email">email:</label>
+    <input type="email" id="signUp_email" name="signUp_email">
+    <br><br>
+    <label for="name">name:</label>
+    <input type="text" id="signUp_name" name="signUp_name" required>
+    <br><br>
+    <label for="password"> password:</label>
+    <input type="tel" id="signUp_password" name="signUp_password" required>
+    <br><br>
+    <label for="biography">biography:</label>
+    <textarea id="signUp_bio" name="signUp_bio"></textarea>
+    <br><br>
+    <input type="submit" role="button" class="button-88" id="signUp_submit" value="Upload">
+  </form>
 </body>
+
 </html>
