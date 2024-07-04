@@ -26,6 +26,8 @@ router.get('/giveAndTake', (req, res) => {
     res.render('giveAndTake');
 });
 
+router.post('/giveAndTake', grandma_etty_Controller.addNote);
+
 router.get('/chats', (req, res) => {
     res.render('chats');
 });
