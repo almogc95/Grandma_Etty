@@ -3,13 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <link rel="stylesheet" href="../public/style.css" type="text/css">
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grandma Etty | Home page</title>
+  <link rel="stylesheet" href="../public/style.css" type="text/css">
   <script src="app.js"></script>
 </head>
 
@@ -18,15 +13,17 @@
     <%- include('navbar') %>
   </header>
   <h1>Log in</h1>
-  <form method="post" action="http://localhost:3000/LogIn">
-    <label for="email">Email:</label>
-    <input type="email" id="LogIn_email" name="LogIn_email" required>
-    <br><br>
-    <label for="password">Password:</label>
-    <input type="password" id="LogIn_password" name="LogIn_password" placeholder="Password" required>
-    <br><br>
-    <input type="submit" role="button" class="button-88" id="LogIn_submit" value="Upload">
-  </form>
+  <div>
+    <form method="post" action="http://localhost:3000/LogIn">
+      <label for="email">Email:</label>
+      <input type="email" id="LogIn_email" name="LogIn_email" required>
+      <br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="LogIn_password" name="LogIn_password" placeholder="Password" required>
+      <br><br>
+      <input type="submit" role="button" class="button-88" id="LogIn_submit" value="LogIn">
+    </form>
+    <p>Don't have an account? <a href="signUp">SignUp</a></p>
   </div>
 </body>
 
