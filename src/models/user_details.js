@@ -5,7 +5,6 @@ const notes_schema = new mongoose.Schema({
     // מה המשתמש נותן
     give: {
         type: String,
-        default: ""
         // required: [true, 'Giving something is required.'],
         // validate: {
         //     validator: function (v) {
@@ -61,7 +60,7 @@ const notes_schema = new mongoose.Schema({
 
     // ...הערות
     notes: {
-
+        type: String,
     }
 });
 
@@ -70,13 +69,16 @@ const Schema = mongoose.Schema;
 
 const user_schema = new Schema({
     signUp_email: {
-        type: String
+        type: String,
+        require: true
     },
     signUp_user_name: {
-        type: String
+        type: String,
+        require: true
     },
     signUp_password: {
         type: Number,
+        require: true
     },
     signUp_bio: {
         type: String

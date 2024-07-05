@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const path = require('path');
+const bodyParser = require('body-parser');
 const PORT = 3000;
 const projectRouter = require('./src/routes/project_router');
 
@@ -23,6 +24,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src', 'views'));
 app.use('/public', express.static(path.join(__dirname, '/public')));
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/', projectRouter);
 
