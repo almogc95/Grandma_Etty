@@ -54,7 +54,7 @@ exports.findUser = async (req, res) => {
             return res.render('logIn', { login_message: 'The password do not match' });
         }
 
-        return res.render('profile', { profile_message: userCheck });
+        return res.status(200).render('profile', { profile_message: userCheck });
 
 
         //old code - delete
