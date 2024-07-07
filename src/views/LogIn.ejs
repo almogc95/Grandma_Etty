@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Grandma Etty | Home page</title>
+  <link rel="stylesheet" href="../public/style.css" type="text/css">
+  <script src="app.js"></script>
+</head>
+
+<body style="text-align: center;">
+  <header>
+    <%- include('navbar') %>
+  </header>
+  <h1>Log in</h1>
+  <br>
+  <div>
+    <% if (login_message) { %>
+      <p style="color: red;">
+        <%= login_message %>
+      </p>
+      <% } %>
+        <form method="post" action="http://localhost:3000/profile">
+          <label for="email">Email:</label>
+          <input type="email" id="LogIn_email" name="LogIn_email" required>
+          <br><br>
+          <label for="password">Password:</label>
+          <input type="password" id="LogIn_password" name="LogIn_password" required>
+          <br><br>
+          <input type="submit" role="button" class="button-88" id="LogIn_submit" value="LogIn">
+        </form>
+        <p>Don't have an account? <a href="signUp">SignUp</a></p>
+  </div>
+</body>
+
+</html>
