@@ -10,26 +10,26 @@ const PORT = 3000;
 
 app.listen(PORT, () => console.log(`Listen on port ${PORT}`));
 
-app.get('/giveAndTake', (req, res) => {
-    res.render('giveAndTake');
-});
-
 app.get('/', (req, res) => {
     res.render('homePage');
 });
 
+app.get('/giveAndTake', (req, res) => {
+    res.render('giveAndTake');
+});
 
 app.get('/chats', (req, res) => {
     res.render('chats');
 });
 
+app.get('/about', (req, res) => {
+    res.render('about');
+});
 
 app.get('/donate', (req, res) => {
     res.render('donate');
 });
 
-
-app.get('/about', (req, res) => {
-    res.render('about');
+app.get('/profile', (req, res) => {
+    res.render('profile');
 });
-
