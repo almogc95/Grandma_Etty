@@ -1,7 +1,7 @@
 {
   "name": "final_project_b",
   "version": "1.0.0",
-  "description": "",
+  "description": "להתקין:\r npm: npm init --y\r express: npm i express\r path: npm i path\r nodmone: npm i nodemone \r ejs: npm i ejs",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,10 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "mongodb": "^6.6.2",
-    "nodemon": "^3.1.1",
+    "mongoose": "^8.4.3",
+    "nodemon": "^3.1.4",
     "path": "^0.12.7"
   }
 }
