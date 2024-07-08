@@ -373,12 +373,6 @@ button:active {
   height: 150px;
 }
 
-#profile_label {
-  text-align: center;
-
-
-
-}
 
 #signUp_submit {
   align-items: center;
@@ -619,3 +613,66 @@ button:active {
   font-size: 25px;
 
 }
+
+
+
+
+#profile_label{
+
+height: 5vh;
+
+}
+
+
+.rating-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding: 2em 2em 2em 5em;
+  gap: 5px;
+  border-top-right-radius: 55px;
+  border-bottom-right-radius: 55px;
+  border: none;
+  position: relative;
+  .rating-value {
+    position: absolute;
+    top: -10px;
+    left: -69px;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    box-shadow: 0 1px 1px hsl(0deg 0% 0%/0.075), 0 2px 2px hsl(0deg 0% 0%/0.075),
+      0 4px 4px hsl(0deg 0% 0%/0.075), 0 8px 8px hsl(0deg 0% 0%/0.075),
+      0 16px 16px hsl(0deg 0% 0%/0.075), inset 0 0 10px #f7db5e, 0 0 10px #f7db5e;
+  }
+  input {
+    display: none;
+  }
+  label {
+    height: 25px;
+    width: 25px;
+    transform-origin: "center center";
+    svg {
+      transition: transform 0.4s ease-in-out;
+      opacity: 0.5;
+    }
+    &:hover {
+      svg {
+        transform: scale(1.25) rotate(10deg);
+      }
+    }
+  }
+}
+
+input:checked ~ label svg {
+  opacity: 1;
+  transform: scale(1.25) rotate(10deg);
+}
+
+
+#logoesnavbar{
+  clip-path: circle(50% at 50% 50%);
+
+
+} 
