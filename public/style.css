@@ -452,21 +452,6 @@ button:active {
   text-decoration: underline;
 }
 
-
-
-
-<<<<<<< HEAD
-img {
-    overflow-clip-margin: content-box;
-    overflow: clip;
-}
-section {
-    zoom: 150%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align: center;
-    
-}
-
 .photo:hover {
     transform: scale(1.2);}
 
@@ -508,8 +493,7 @@ section {
         margin-inline-end: 0px;
         unicode-bidi: isolate;
     }
-      
-=======
+    
 
 
 
