@@ -6,12 +6,12 @@ exports.addUser = async (req, res) => {
             signUp_email: req.body.signUp_email,
             signUp_user_name: req.body.signUp_name,
             signUp_password: req.body.signUp_password,
-            signUp_bio: req.body.signUp_bio,
+            signUp_bio: req.body.signUp_bio
         }
 
         //Check if user already exists in DB
         const existingUser = await UserModel.findOne({ signUp_email: data.signUp_email });
-        console.log(existingUser)
+        console.log(existingUser);
         if (existingUser) {
             return res.render('signUp', { message: 'User already exists.' });
         }
