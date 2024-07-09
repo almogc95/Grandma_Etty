@@ -47,12 +47,24 @@ router.get('/auth/failure', (req, res) => {
     res.send('Somthing went wrong...');
 });
 
-//Profile
 router.get('/profile', isLoggedIn, (req, res) => {
     console.log(req.user);
+try{
+
     res.render('profile', { profile_message: null || `${req.user.displayName}` });
+}
+catch (error) {
+    res.sendFile(`${__dirname}` + '/pablic/homePage.ejs');
+}
+
 });
 
+
+
+
+
+
+// { email_user: null || `${req.email.email}`
 // router.post('/profile', (req, res) => { res.render('profile') });
 
 // router.get('/profile/:id', (req, res) => { res.render('profile') });
@@ -65,7 +77,14 @@ router.get('/profile', isLoggedIn, (req, res) => {
 
 router.get('/giveAndTake', (req, res) => { res.render('giveAndTake'); });
 
-router.post('/giveAndTake', grandma_etty_Controller.addNote);
+router.post('/giveAndTake', async (req, res) => {
+    try {
+        
+    } catch {
+        
+    }
+});
+
 
 router.get('/chats', (req, res) => { res.render('chats'); });
 
