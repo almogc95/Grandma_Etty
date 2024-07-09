@@ -54,6 +54,7 @@ router.get('/profile', isLoggedIn, (req, res) => {
 });
 
 // router.post('/profile', (req, res) => { res.render('profile') });
+
 // router.get('/profile/:id', (req, res) => { res.render('profile') });
 
 
