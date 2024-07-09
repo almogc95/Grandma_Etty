@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
+const Schema = mongoose.Schema;
+
 // סכמה של הפתקים
-const notes_schema = new mongoose.Schema({
+const notes_schema = new Schema({
     // מה המשתמש נותן
     give: {
         type: String,
@@ -64,8 +66,6 @@ const notes_schema = new mongoose.Schema({
     }
 });
 
-// מפתח ID של התופס
-const Schema = mongoose.Schema;
 
 const user_schema = new Schema({
     signUp_email: {

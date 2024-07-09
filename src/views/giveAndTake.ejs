@@ -19,6 +19,7 @@
         <h1>Bulletin Board</h1>
         <p>Here you can upload a donation and help form. After uploading the form, you can receive a response from one of the other participants.</p>
         <p>(Everything with a * sign must be filled)</p>
+        <div class="container">
         <form action="http://localhost:3000/giveAndTake" method="post" class="row g-2  shadow p-3 mb-5 bg-body-tertiary rounded container border">
             <div class="col-md-5">
                 <label for="give" class="form-label">What I give:</label>
@@ -48,26 +49,12 @@
                 <input type="submit" id="giveAndTake_formUpload" class="btn btn-primary" value="Upload">
             </div>
         </form>
+        </div>
         <div id="myNotes">
             <h2>My notes:</h2>
         </div>
         <h2>Here you can help the people who uploaded a form and need your help by taking the note they uploaded, and then talk to the person!</h2>
-        <br><br><br><br><br><br><br><br>
-        <div class="row row-cols-1 row-cols-md-6 g-5">
-            <div class="col">
-                <div class="card">
-                    <img src="../../public/logoes.jpg" class="card-img-top" alt="../../public/logoes.jpg">
-                    <div class="card-body">
-                        <h5 class="card-title">סבתא אתי</h5>
-                        <p class="card-text">רוצה עזרה ב: קניות</p>
-                        <p class="card-text">יכול/ה לעזור ב: לימודי שחמט</p>
-                        <p class="card-text">אני יכול/ה ב: 07/08/2024</p>
-                        <p class="card-text">מיקום: ירושלים, הזית 5</p>
-                        <button>לקחתי</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
+            <!-- <div class="col">
                 <div class="card">
                     <img src="../../public/logoes.jpg" class="card-img-top" alt="../../public/logoes.jpg">
                     <div class="card-body">
@@ -79,113 +66,7 @@
                         <button>לקחתי</button>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="../../public/logoes.jpg" class="card-img-top" alt="../../public/logoes.jpg">
-                    <div class="card-body">
-                        <h5 class="card-title">אסתי כהן</h5>
-                        <p class="card-text">רוצה עזרה ב: מתמטיקה</p>
-                        <p class="card-text">יכול/ה לעזור ב: לימוד איפור </p>
-                        <p class="card-text">אני יכול/ה ב: 25/08/2024</p>
-                        <p class="card-text">מיקום: הרצליה, אגוז 8</p>
-                        <button>לקחתי</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="../../public/logoes.jpg" class="card-img-top" alt="../../public/logoes.jpg">
-                    <div class="card-body">
-                        <h5 class="card-title">גבריאל יחזקאל</h5>
-                        <p class="card-text">רוצה עזרה ב: לימוד גיטרה</p>
-                        <p class="card-text">יכול/ה לעזור ב: שיעורי פסנתר</p>
-                        <p class="card-text">אני יכול/ה ב: 10/9/2024</p>
-                        <p class="card-text">מיקום: ירושלים, המכבים 8</p>
-                        <button>לקחתי</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="../../public/logoes.jpg" class="card-img-top" alt="../../public/logoes.jpg">
-                    <div class="card-body">
-                        <h5 class="card-title">יצחק</h5>
-                        <p class="card-text">רוצה עזרה ב: לימודי עזרה ראשונה</p>
-                        <p class="card-text">יכול/ה לעזור ב: פיתוח קול </p>
-                        <p class="card-text">אני יכול/ה ב: 4/11/2024</p>
-                        <p class="card-text">מיקום: תל-אביב, אבן גבירול 2</p>
-                        <button>לקחתי</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="../../public/logoes.jpg" class="card-img-top" alt="../../public/logoes.jpg">
-                    <div class="card-body">
-                        <h5 class="card-title">דוד, משה</h5>
-                        <p class="card-text">רוצה עזרה ב: חליבת פרות בחווה</p>
-                        <p class="card-text">יכול/ה לעזור ב: טיפים לחיים</p>
-                        <p class="card-text">אני יכול/ה ב: 15/12/2024</p>
-                        <p class="card-text">מיקום: מעלה גמלא, החלוצים 2</p>
-                        <button>לקחתי</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="../../public/logoes.jpg" class="card-img-top" alt="../../public/logoes.jpg">
-                    <div class="card-body">
-                        <h5 class="card-title">אלי כהן</h5>
-                        <p class="card-text">רוצה עזרה ב: לימודי דיפלומטיה</p>
-                        <p class="card-text">יכול/ה לעזור ב: לימוד ערבית </p>
-                        <p class="card-text">אני יכול/ה ב: 10/9/2024</p>
-                        <p class="card-text">מיקום: דמשק, אל מידאן 8</p>
-                        <button>לקחתי</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="../../public/logoes.jpg" class="card-img-top" alt="../../public/logoes.jpg">
-                    <div class="card-body">
-                        <h5 class="card-title">בנימין</h5>
-                        <p class="card-text">רוצה עזרה ב: הדברה</p>
-                        <p class="card-text">יכול/ה לעזור ב: טיפים לחיי זוגיות מתמשכת</p>
-                        <p class="card-text">אני יכול/ה ב: 10/7/2024</p>
-                        <p class="card-text">מיקום: ירושלים, סמולנסקין 9</p>
-                        <button>לקחתי</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="../../public/logoes.jpg" class="card-img-top" alt="../../public/logoes.jpg">
-                    <div class="card-body">
-                        <h5 class="card-title">יחיאל סיני</h5>
-                        <p class="card-text">רוצה עזרה ב: לימודי בניייה</p>
-                        <p class="card-text">יכול/ה לעזור ב: אומנות המחבוא</p>
-                        <p class="card-text">אני יכול/ה ב: 7/10/2024</p>
-                        <p class="card-text">מיקום: עזה, חאן יונס 9</p>
-                        <p class="card-text">הערות: במנהרות למטה</p>
-                        <button>לקחתי</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="../../public/logoes.jpg" class="card-img-top" alt="../../public/logoes.jpg">
-                    <div class="card-body">
-                        <h5 class="card-title">אלי קופטר</h5>
-                        <p class="card-text">רוצה עזרה ב: אווירו דינמיקה</p>
-                        <p class="card-text">יכול/ה לעזור ב:טרמפ הביתה</p>
-                        <p class="card-text">אני יכול/ה ב: 25/11/2024</p>
-                        <p class="card-text">מיקום: </p>
-                        <button>לקחתי</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            </div> -->
         <!-- <%- include('footer') %> -->
     </body>
 </html>
