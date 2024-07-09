@@ -3,18 +3,104 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Grandma Etty | Home page</title>
+  <script src="https://accounts.google.com/gsi/client" onload="initClient()" async defer></script>
+  <meta name="google-signin-client_id"
+    content="1073328368754-5jaf72ogj34gj3j8pu3d285hkqodsfq1.apps.googleusercontent.com">
   <link rel="stylesheet" href="../public/style.css" type="text/css">
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
+  <title>Grandma Etty | Home page</title>
 </head>
 
-<body style="text-align: center;">
+<body style="text-align: center;align-items: center;">
   <header>
     <%- include('navbar') %>
   </header>
   <h1>Log in</h1>
   <br>
-  <div>
+
+  
+  <!-- <script>
+    var client;
+    var access_token;
+
+    function initClient() {
+      client = google.accounts.oauth2.initTokenClient({
+        client_id: '1073328368754-5jaf72ogj34gj3j8pu3d285hkqodsfq1.apps.googleusercontent.com',
+        scope: 'https://www.googleapis.com/auth/calendar.readonly \
+                  https://www.googleapis.com/auth/contacts.readonly',
+        callback: (tokenResponse) => {
+          access_token = tokenResponse.access_token;
+        },
+      });
+    }
+    function getToken() {
+      client.requestAccessToken();
+    }
+    function revokeToken() {
+      google.accounts.oauth2.revoke(access_token, () => { console.log('access token revoked') });
+    }
+    function loadCalendar() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'https://www.googleapis.com/calendar/v3/calendars/primary/events');
+      xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
+      xhr.send();
+    }
+  </script> -->
+
+
+
+
+  <!-- 
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+    function handleCredentialResponse(response) {
+      console.log("Encoded JWT ID token: " + response.credential);
+    }
+    window.onload = function () {
+      google.accounts.id.initialize({
+        client_id: "[REDACTED]",
+        callback: handleCredentialResponse
+      });
+      google.accounts.id.renderButton(
+        document.getElementById("buttonDiv"),
+        { theme: "outline", size: "large" }  // customization attributes
+      );
+      google.accounts.id.prompt(); // also display the One Tap dialog
+    }
+  </script>
+  <div id="buttonDiv"></div> -->
+
+
+  <!-- login -->
+  <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+
+  <!-- sign out -->
+  <!-- <a href="#" onclick="signOut();">Sign out</a> -->
+
+  <!-- login -->
+  <!-- <script>
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+      console.log('Name: ' + profile.getName());
+      console.log('Image URL: ' + profile.getImageUrl());
+      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    }
+  </script> -->
+
+
+  <!-- sign out -->
+  <!-- <script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+  </script> -->
+
+  <!-- old code -->
+  <!-- <div>
     <% if (login_message) { %>
       <p style="color: red;">
         <%= login_message %>
@@ -30,7 +116,7 @@
           <input type="submit" role="button" class="button-88" id="LogIn_submit" value="LogIn">
         </form>
         <p>Don't have an account? <a href="signUp">SignUp</a></p>
-  </div>
+  </div> -->
 </body>
 
 </html>
