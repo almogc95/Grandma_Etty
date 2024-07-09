@@ -27,13 +27,21 @@ passport.use(new GoogleStrategy({
     // }
 
     //old code
-    function (request, accessToken, refreshToken, profile, done) {
-        new UserModel({
-            username: profile.displayName,
-            googleId: profile.id
-        }).save().then((newUser) => {
-            console.log(`new user created: ${newUser}`);
-        });
+    async (request, accessToken, refreshToken, profile, done) => {
+        const existingUser = await UserModel.findOne({ googleId: profile.id });
+        console.log(existingUser);
+        if (existingUser) {
+            done(null, existingUser);
+        }
+        else {
+            new UserModel({
+                googleId: profile.id,
+                displayName: profile.displayName,
+                email: profile.email
+            }).save().then((newUser) => {
+                console.log(`new user created: ${newUser}`);
+            });
+        }
         return done(null, profile);
     }
 ));
