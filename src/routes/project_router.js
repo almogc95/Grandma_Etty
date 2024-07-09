@@ -19,6 +19,7 @@ router.post('/logIn', grandma_etty_Controller.findUser);
 router.get('/profile', (req, res) => { res.render('profile', { profile_message: null }); });
 
 // router.post('/profile', (req, res) => { res.render('profile') });
+
 // router.get('/profile/:id', (req, res) => { res.render('profile') });
 
 
