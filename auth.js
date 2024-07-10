@@ -12,6 +12,7 @@ passport.use(new GoogleStrategy({
     callbackURL: "http://localhost:3000/google/callback",
     passReqToCallback: true
 },
+    //old code
     // (accessToken, refreshToken, profile, done) => {
     //     UserModel.findOne({ googleId: profile?.id }).then((existingUser) => {
     //         if (existingUser) {
@@ -26,10 +27,9 @@ passport.use(new GoogleStrategy({
     //     });
     // }
 
-    //old code
     async (request, accessToken, refreshToken, profile, done) => {
         const existingUser = await UserModel.findOne({ googleId: profile.id });
-        console.log(existingUser);
+        console.log('existingUser', existingUser);
         if (existingUser) {
             done(null, existingUser);
         }
@@ -41,8 +41,8 @@ passport.use(new GoogleStrategy({
             }).save().then((newUser) => {
                 console.log(`new user created: ${newUser}`);
             });
+            return done(null, profile);
         }
-        return done(null, profile);
     }
 ));
 
