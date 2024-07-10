@@ -98,3 +98,14 @@ exports.showUser = async (req, res) => {
         res.status(500).json({ error: 'An error occurred while trying to find the user' })
     }
 };
+
+
+
+exports.findUserAndUpdate = async (req, res) => {
+    try {
+        const userCheck = await UserModel.findOne({ email: req.user.email });
+        console.log(userCheck);
+    } catch (error) {
+        console.log('err')
+    }
+};

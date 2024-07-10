@@ -7,11 +7,11 @@ router.use(session({ secret: "cat" }));
 router.use(passport.initialize());
 router.use(passport.session());
 const grandma_etty_Controller = require('../controllers/grandma_etty_Controller');
-
+const UserModel = require('../models/google_model');
 
 
 function isLoggedIn(req, res, next) {
-    req.user ? next() : req.sendStatus(401);
+    req.user ? next() : res.sendStatus(401);
 }
 
 //HomePage
@@ -47,39 +47,29 @@ router.get('/auth/failure', (req, res) => {
     res.send('Somthing went wrong...');
 });
 
-router.get('/profile/', isLoggedIn, (req, res) => {
-    console.log(req.user);
-    res.render('profile', { profile_message: null || `${req.user.displayName}` });
+//Profile
+router.get('/profile', isLoggedIn, async (req, res) => {
+    const userCheck = await UserModel.findOne({ email: req.user.email });
+    res.render('profile', { userName: null || `${userCheck.displayName}`, userEmail: userCheck.email, userPhoto: userCheck.picture, userPhone: userCheck.phone });
 });
 
-// { email_user: null || `${req.email.email}`
-// router.post('/profile', (req, res) => { res.render('profile') });
-
-// router.get('/profile/:id', (req, res) => { res.render('profile') });
-
-
-// router.get('/profile', grandma_etty_Controller.showUser);
-
-
-
-
-router.get('/giveAndTake', (req, res) => { res.render('giveAndTake'); });
-
-router.post('/giveAndTake', async (req, res) => {
+router.post('/profile', async (req, res) => {
     try {
-
-    } catch {
-
+        await UserModel.updateOne({ email: req.user.email }, { $set: { phone: req.body.PhoneNumber } });
+        res.render('profile', { userName: null || `${req.user.displayName}`, userEmail: req.user.email, userPhoto: req.user.picture, userPhone: req.body.PhoneNumber });
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred while creating the user' });
     }
 });
 
+router.get('/giveAndTake', (req, res) => { res.render('giveAndTake'); });
+
+router.post('/giveAndTake', grandma_etty_Controller.addNote);
 
 router.get('/chats', (req, res) => { res.render('chats'); });
 
 router.get('/about', (req, res) => { res.render('about'); });
 
 router.get('/donate', (req, res) => { res.render('donate'); });
-
-
 
 module.exports = router;

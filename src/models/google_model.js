@@ -40,6 +40,11 @@ const user_google_schema = new Schema({
     googleId: String,
     displayName: String,
     email: String,
+    picture: String,
+    phone: {
+        type: String,
+        default: ""
+    },
     messages: [notes_schema]
 });
 
