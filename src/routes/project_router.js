@@ -7,7 +7,7 @@ router.use(session({ secret: "cat" }));
 router.use(passport.initialize());
 router.use(passport.session());
 const grandma_etty_Controller = require('../controllers/grandma_etty_Controller');
-const UserModel = require('../models/user_details');
+// const UserModel = require('../models/user_details');
 
 
 
@@ -76,8 +76,7 @@ router.post('/giveAndTake', isLoggedIn, async (req, res) => {
             location: req.body.location,
             notes: req.body.notes
         };
-        console.log(`User new ad: ${giveAndTakeData}`);
-
+        
         const newNote = {
             give,
             take,
@@ -86,6 +85,7 @@ router.post('/giveAndTake', isLoggedIn, async (req, res) => {
             location,
             notes
         };
+        console.log(`User new ad: ${newNote}`);
 
         await UserModel.updateOne(
             { googleId: req.user.googleId },
