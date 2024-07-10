@@ -40,7 +40,7 @@ const user_google_schema = new Schema({
     googleId: String,
     displayName: String,
     email: String,
-    messages: [notes_schema]
+    ads: [notes_schema]
 });
 
 const UserModel = mongoose.model('user_google_details', user_google_schema);

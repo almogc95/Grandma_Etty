@@ -83,7 +83,7 @@ const user_schema = new Schema({
     signUp_bio: {
         type: String
     },
-    messages: [notes_schema]
+    ads: [notes_schema]
 });
 
 // old code
