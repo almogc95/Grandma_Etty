@@ -101,11 +101,11 @@ nav a {
 
 #odot {
   font-size: 1.2em;
-text-align: center;  
-max-width: 900px;
-margin: 0 auto;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
- 
+
 
 footer pre {
   font-size: 18px;
@@ -135,9 +135,10 @@ footer {
 
 
 .photo {
-    border-radius: 20%;
-    border: 7px solid #ffc4d0;
+  border-radius: 20%;
+  border: 7px solid #ffc4d0;
 }
+
 .footer-content h3 {
   font-size: 2.1rem;
   font-weight: 500;
@@ -323,11 +324,9 @@ button:active {
 }
 
 #img_profile {
-  height: 250px;
-  width: 250px;
+  height: 100px;
+  width: 100px;
   border-radius: 500px;
-  margin-left: 600px;
-  /* margin-top: 50px;  */
 }
 
 #Edit_Profile {
@@ -448,6 +447,7 @@ button:active {
 #underlined-paragraph2 {
   text-decoration: underline;
 }
+
 #style {
   text-decoration: underline;
 }
@@ -600,9 +600,9 @@ button:active {
 
 
 
-#profile_label{
+#profile_label {
 
-height: 5vh;
+  height: 5vh;
 
 }
 
@@ -618,6 +618,7 @@ height: 5vh;
   border-bottom-right-radius: 55px;
   border: none;
   position: relative;
+
   .rating-value {
     position: absolute;
     top: -10px;
@@ -629,17 +630,21 @@ height: 5vh;
       0 4px 4px hsl(0deg 0% 0%/0.075), 0 8px 8px hsl(0deg 0% 0%/0.075),
       0 16px 16px hsl(0deg 0% 0%/0.075), inset 0 0 10px #f7db5e, 0 0 10px #f7db5e;
   }
+
   input {
     display: none;
   }
+
   label {
     height: 25px;
     width: 25px;
     transform-origin: "center center";
+
     svg {
       transition: transform 0.4s ease-in-out;
       opacity: 0.5;
     }
+
     &:hover {
       svg {
         transform: scale(1.25) rotate(10deg);
@@ -648,13 +653,13 @@ height: 5vh;
   }
 }
 
-input:checked ~ label svg {
+input:checked~label svg {
   opacity: 1;
   transform: scale(1.25) rotate(10deg);
 }
 
 
-#logoesnavbar{
+#logoesnavbar {
   clip-path: circle(50% at 50% 50%);
 } 
 
