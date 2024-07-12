@@ -5,8 +5,7 @@ const Schema = mongoose.Schema;
 const notes_schema = new Schema({
     // מה המשתמש נותן
     give: {
-        type: String,
-
+        type: String,       
     },
 
     // מה המשתמש לוקח
@@ -16,12 +15,12 @@ const notes_schema = new Schema({
 
     // תחילת הפגישה
     Date_time: {
-        type: Date,
+        type: Date,      
     },
 
     // סיום הפגישה
     until: {
-        type: Date,
+        type: Date,        
     },
 
     // מיקום הפגישה
@@ -31,7 +30,7 @@ const notes_schema = new Schema({
 
     // ...הערות
     notes: {
-        type: String,
+        type: String,        
     }
 });
 
@@ -45,7 +44,7 @@ const user_google_schema = new Schema({
         type: String,
         default: ""
     },
-    messages: [notes_schema]
+    ads: [notes_schema]
 });
 
 const UserModel = mongoose.model('user_google_details', user_google_schema);

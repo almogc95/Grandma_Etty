@@ -10,8 +10,10 @@ const grandma_etty_Controller = require('../controllers/grandma_etty_Controller'
 const UserModel = require('../models/google_model');
 
 
+
 function isLoggedIn(req, res, next) {
     req.user ? next() : res.sendStatus(401);
+    // req.user ? next() : res.redirect('/');
 }
 
 //HomePage
@@ -62,9 +64,56 @@ router.post('/profile', async (req, res) => {
     }
 });
 
-router.get('/giveAndTake', (req, res) => { res.render('giveAndTake'); });
+router.get('/giveAndTake', async (req, res) => {
+    try {
+        const usersData = await UserModel.find({});
+        const allAds = usersData.reduce((ads, user) => {
+            const userAdsWithDisplayName = user.ads.map(ad => ({
+                ...ad,
+                displayName: user.displayName
+            }));
+            return ads.concat(userAdsWithDisplayName)
+        }, []);
+        res.render('giveAndTake', { ads: allAds});
+    } catch (error) {
+        console.log(error);
+        res.render('giveAndTake', { ads: [] });
+    }
+});
 
-router.post('/giveAndTake', grandma_etty_Controller.addNote);
+router.post('/giveAndTake', async (req, res) => {
+    try {
+        const findUser = { googleId: req.user.googleId };
+        const giveAndTakeData = {
+            give: req.body.give,
+            take: req.body.take,
+            Date_time: req.body.Date_time,
+            until: req.body.until,
+            location: req.body.location,
+            notes: req.body.notes
+        };
+
+        await UserModel.updateOne(
+            findUser,
+            req.user.ads.length === 0 ? { $set: { ads: [giveAndTakeData] } } : { $push: { ads: giveAndTakeData } }
+        );
+
+        const usersData = await UserModel.find({});
+        const allAds = usersData.reduce((ads, user) => {
+            const userAdsWithDisplayName = user.ads.map(ad => ({
+                ...ad,
+                displayName: user.displayName
+            }));
+            // console.log(`userAdsWithDisplayName: ${userAdsWithDisplayName}`);
+            return ads.concat(userAdsWithDisplayName)
+        }, []);
+        // console.log(`allAds: ${allAds}`);
+        res.render('giveAndTake', { ads: allAds });
+    } catch (error) {
+        console.log(error);
+        res.render('giveAndTake', { ads: [] });
+    }
+});
 
 router.get('/chats', (req, res) => { res.render('chats'); });
 

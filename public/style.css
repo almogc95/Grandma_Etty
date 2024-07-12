@@ -656,6 +656,12 @@ input:checked ~ label svg {
 
 #logoesnavbar{
   clip-path: circle(50% at 50% 50%);
-
-
 } 
+
+.giveAndTakeAd{
+  display: flex;
+}
+
+/* #hiddenAd{
+  visibility: hidden;
+} */
