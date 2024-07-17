@@ -3,56 +3,64 @@ const router = express.Router();
 const passport = require('passport');
 require('../../auth');
 const session = require('express-session');
+const UserModel = require('../models/google_model');
+const grandma_etty_Controller = require('../controllers/grandma_etty_Controller');
+
+// Initialize session with appropriate options
 router.use(session({ secret: "cat" }));
 router.use(passport.initialize());
 router.use(passport.session());
-const grandma_etty_Controller = require('../controllers/grandma_etty_Controller');
-const UserModel = require('../models/google_model');
-
-
 
 function isLoggedIn(req, res, next) {
     req.user ? next() : res.sendStatus(401);
-    // req.user ? next() : res.redirect('/');
 }
 
+
 //HomePage
-router.get('/', (req, res) => { res.render('homepage'); });
-
-//SignUp
-router.get('/signUp', (req, res) => { res.render('signUp', { message: null }); });
-
-router.post('/signUp', grandma_etty_Controller.addUser);
-
-//LogIn
-router.get('/logIn',
-    passport.authenticate('google', { scope: ['email', 'profile'] })
-    // res.render('LogIn', { login_message: null });
-);
-
-// router.post('/logIn', grandma_etty_Controller.findUser);
-
-router.get('/logOut', (req, res) => {
-    req.logOut();
-    req.session.destroy();
-    res.send('Goodbye!');
+router.get('/', async (req, res) => {
+    res.render('homepage')
 });
+
+
+// LogIn_SignUp
+router.get('/logIn_signUp', passport.authenticate('google', { scope: ['email', 'profile'] }));
+
+
+
+// LogOut
+router.get('/logOut', (req, res) => {
+    req.logout((err) => {
+        if (err) {
+            return next(err);
+        }
+        req.session.destroy((err) => {
+            if (err) {
+                return next(err);
+            }
+            res.render('homepage');
+        });
+    });
+});
+
 
 //Authenticate
 router.get('/google/callback',
     passport.authenticate('google', {
         successRedirect: '/profile',
         failureRedirect: '/auth/failure'
-    }));
+    })
+);
+
 
 router.get('/auth/failure', (req, res) => {
     res.send('Somthing went wrong...');
 });
 
+
 //Profile
 router.get('/profile', isLoggedIn, async (req, res) => {
     const userCheck = await UserModel.findOne({ email: req.user.email });
-    res.render('profile', { userName: null || `${userCheck.displayName}`, userEmail: userCheck.email, userPhoto: userCheck.picture, userPhone: userCheck.phone });
+    res.render('profile', { userName: null || `${ userCheck.displayName }`, userEmail: userCheck.email, userPhoto: userCheck.picture, userPhone: userCheck.phone });
 });
 
 router.post('/profile', async (req, res) => {
@@ -74,7 +82,7 @@ router.get('/giveAndTake', async (req, res) => {
             }));
             return ads.concat(userAdsWithDisplayName)
         }, []);
-        res.render('giveAndTake', { ads: allAds});
+        res.render('giveAndTake', { ads: allAds });
     } catch (error) {
         console.log(error);
         res.render('giveAndTake', { ads: [] });
@@ -115,10 +123,6 @@ router.post('/giveAndTake', async (req, res) => {
     }
 });
 
-router.get('/chats', (req, res) => { res.render('chats'); });
-
 router.get('/about', (req, res) => { res.render('about'); });
-
-router.get('/donate', (req, res) => { res.render('donate'); });
 
 module.exports = router;

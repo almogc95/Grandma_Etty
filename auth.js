@@ -12,24 +12,9 @@ passport.use(new GoogleStrategy({
     callbackURL: "http://localhost:3000/google/callback",
     passReqToCallback: true
 },
-    //old code
-    // (accessToken, refreshToken, profile, done) => {
-    //     UserModel.findOne({ googleId: profile?.id }).then((existingUser) => {
-    //         if (existingUser) {
-    //             done(null, existingUser);
-    //         } else {
-    //             new UserModel({
-    //                 googleId: profile?.id,
-    //                 displayName: profile?.displayName,
-    //                 email: profile?.emails[0].value,
-    //             }).save().then((user) => done(null, user));
-    //         }
-    //     });
-    // }
 
     async (request, accessToken, refreshToken, profile, done) => {
         const existingUser = await UserModel.findOne({ googleId: profile.id });
-        console.log('existingUser', existingUser);
         if (existingUser) {
             done(null, existingUser);
         }
