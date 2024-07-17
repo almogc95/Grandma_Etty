@@ -31,6 +31,16 @@ const notes_schema = new Schema({
     // ...הערות
     notes: {
         type: String,        
+    },
+    taken: {
+        type: Boolean,
+        default: false
+    },
+    takenBy: {
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'User',
+        type: String,
+        default: null
     }
 });
 
