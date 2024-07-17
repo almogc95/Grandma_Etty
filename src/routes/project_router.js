@@ -131,7 +131,7 @@ router.post('/giveAndTake', async (req, res) => {
             until: req.body.until,
             location: req.body.location,
             notes: req.body.notes,
-            taken
+            taken: false
         };
 
         await UserModel.updateOne(
