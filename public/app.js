@@ -1,8 +1,10 @@
-// document.getElementById('giveAndTake_formUpload').onclick = (event) => {
-//     event.preventDefault();
-//     const ad = document.getElementById('hiddenAd').value;
-//     const displayName = document.createElement('p');
-//     displayName.innerHTML = ad ;
-//     document.body.appendChild(displayName);
-//     console.log(displayName);
-// };
+function takeAd(index) {
+    fetch(`/takeAd/${index}`, { method: 'POST' }).then(response => {
+        if (response.ok) {
+            document.getElementById(`ad${index}`).style.display = 'none';
+        }
+        else {
+        console.error('Failed to mark ad as taken');
+        }
+    });
+};
